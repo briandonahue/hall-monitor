@@ -5,7 +5,6 @@ module.exports = (body) => {
     teacher: /Instructor\s*:\s*(.*)/.exec(body)[1],
     overallGrade: /Current overall grade\**\s*:\s*(.*)/.exec(body)[1].trim()
   }
-  console.log(data)
 
   const classInfoRE = /.*\sGrade:\s.*[\r\n]/g
   //  var classInfoRE = /.*\r/g
@@ -35,6 +34,5 @@ module.exports = (body) => {
     }
     return grade
   })
-  console.log(data)
   return data
 }

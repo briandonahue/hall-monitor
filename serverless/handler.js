@@ -1,4 +1,10 @@
-module.exports.Assignments = async (event) => {
+const parser = require('src/progress-report-parser')
+
+module.exports.assignments = async (event) => {
+  const { body } = event
+  console.log(body)
+  const result = parser(body)
+  console.log(result)
   return {
     statusCode: 200,
     body: JSON.stringify({
