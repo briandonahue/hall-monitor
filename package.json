@@ -14,12 +14,12 @@
   },
   "scripts": {
     "lint": "eslint ./src ./serverless",
-    "deploy": "cd ./serverless && sls deploy",
+    "deploy": "yarn install --prod && cd ./serverless && sls deploy && cd .. && yarn install",
     "test": "if [ -z ${CI+x} ]; then CHAINIO_ENV=test jest --watch; else CHAINIO_ENV=test jest; fi"
   },
   "dependencies": {},
   "devDependencies": {
-    "aws-sdk": "^2.421.0",
+    "aws-sdk": "^2.422.0",
     "eslint": "^5.15.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",

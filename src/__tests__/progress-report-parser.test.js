@@ -6,7 +6,7 @@ const expectedJson = require('./data/progress-report-1.json')
 const parser = require('../progress-report-parser')
 
 describe('progress report parser', () => {
-  it('should stuff', () => {
+  it('should parse email to expected json', () => {
     const result = parser(text)
     expect(result).toEqual(expectedJson)
   })
