@@ -1,0 +1,70 @@
+
+Attendance detail report for Doe, Jane for classes belonging to the Q=
+3 term:
+
+DAILY PERIOD BREAKDOWN
+Expression 1(B) 1(G):
+ - 09/27/2018 E-DR,  - 09/28/2018 U,  - 10/26/2018 SA,  - 12/04/2018 SA,  -=
+ 12/20/2018 E, 1(B) - 02/01/2019 SA, 1(B) - 02/07/2019 SA, 1(G) - 02/08/201=
+9 SA
+Expression 2(B):
+ - 09/27/2018 E-DR,  - 10/26/2018 SA, 2(B) - 02/01/2019 SA, 2(B) - 02/07/20=
+19 SA
+Expression 2(G):
+ - 08/30/2018 TE,  - 09/28/2018 LCE,  - 12/04/2018 SA,  - 12/20/2018 E,  - =
+01/08/2019 LCE, 2(G) - 02/08/2019 SA
+Expression 3(B) 3(G):
+ - 09/27/2018 E-DR,  - 10/26/2018 SA,  - 12/04/2018 SA,  - 12/18/2018 LCE, =
+ - 12/20/2018 E, 3(B) - 02/01/2019 SA, 3(B) - 02/07/2019 SA, 3(G) - 02/08/2=
+019 SA
+Expression L4(B) L4(G):
+ - 10/26/2018 SA,  - 12/20/2018 E, L4(B) - 02/01/2019 SA, L4(B) - 02/07/201=
+9 SA, L4(G) - 02/08/2019 SA
+Expression 5/6(B) 5/6(G):
+ - 09/27/2018 E-DR,  - 10/11/2018 U,  - 10/26/2018 SA,  - 12/20/2018 E, 5/6=
+(B) - 02/01/2019 SA, 5/6(B) - 02/07/2019 SA, 5/6(G) - 02/08/2019 SA
+Expression 7/8(B) 7/8(G):
+ - 09/27/2018 E-DR,  - 10/24/2018 E,  - 10/26/2018 SA,  - 12/20/2018 E,  - =
+01/14/2019 SA, 7/8(B) - 02/01/2019 SA, 7/8(B) - 02/07/2019 SA, 7/8(G) - 02/=
+08/2019 SA
+Expression 9(B) 9(G):
+ - 09/27/2018 E-DR,  - 10/18/2018 U,  - 10/24/2018 E,  - 10/26/2018 SA,  - =
+12/17/2018 LCU,  - 12/20/2018 E,  - 01/14/2019 SA, 9(B) - 02/01/2019 SA, 9(=
+B) - 02/07/2019 SA, 9(G) - 02/08/2019 SA, 9(B) - 02/19/2019 LCU, 9(B) - 02/=
+25/2019 LCU, 9(B) - 03/01/2019 LCU
+Expression 10(B) 10(G):
+ - 09/18/2018 LCE,  - 09/20/2018 LCU,  - 09/27/2018 E-DR,  - 10/24/2018 E, =
+ - 10/26/2018 SA,  - 12/20/2018 E,  - 01/14/2019 SA, 10(B) - 02/01/2019 SA,=
+ 10(B) - 02/07/2019 SA, 10(G) - 02/08/2019 SA, 10(B) - 02/11/2019 E, 10(B) =
+- 03/01/2019 LCE
+Expression HR(B) HR(G):
+ - 09/07/2018 TU,  - 09/12/2018 TU,  - 09/26/2018 E-DR,  - 09/27/2018 E-DR,=
+  - 09/28/2018 TU,  - 10/03/2018 TU,  - 10/17/2018 TU,  - 10/24/2018 TU,  -=
+ 10/25/2018 TU,  - 10/26/2018 SA,  - 10/29/2018 TU,  - 10/30/2018 TU,  - 11=
+/16/2018 TU,  - 11/26/2018 TU,  - 12/04/2018 SA,  - 12/11/2018 TU,  - 12/13=
+/2018 TU,  - 12/19/2018 TU,  - 12/20/2018 E,  - 01/03/2019 TU,  - 01/04/201=
+9 TU,  - 01/08/2019 TU,  - 01/14/2019 TU,  - 01/15/2019 TU, HR(G) - 01/29/2=
+019 TU, HR(B) - 02/01/2019 SA, HR(B) - 02/07/2019 SA, HR(G) - 02/08/2019 SA=
+, HR(B) - 02/11/2019 ED-E, HR(B) - 02/13/2019 TU, HR(B) - 02/19/2019 TU, HR=
+(G) - 02/26/2019 TU, HR(B) - 03/05/2019 TU, HR(B) - 03/07/2019 TU, HR(G) - =
+03/08/2019 TU, HR(B) - 03/11/2019 TU, HR(G) - 03/12/2019 TU, HR(B) - 03/13/=
+2019 TU
+
+(Code Legend: =3DPresent, U=3DUnexcused Absence, E=3DExcused Absence, E-DR=
+=3DExcused w/ Doctor's Note, TU=3DTardy-Unexcused, TE=3DTardy Excused, LCU=
+=3DLate to Class-Unexcused, LCE=3DLate to Class-Excused, ED-U=3DEarly Dismi=
+ssal Unexcused, ED-E=3DEarly Dismissal Excused, IS=3DIn-School Suspension, =
+S=3DSuspension, EXP=3DExpulsion, SA=3DSchool Activity, CV=3DCollege Visit, =
+H=3DHomebound Instruction, NUR=3DNurse's Office, HS=3DHospitalization, V=3D=
+(DO NOT USE- INACTIVE)Family Vacation, AA=3D(DO NOT USE- INACTIVE)Administr=
+ative Absence, LB=3D(DO NOT USE- INACTIVE)LATE BUS, PH=3D(DO NOT USE- INACT=
+IVE)Partial Hosp (Keep on Rolls), R=3D(DO NOT USE- INACTIVE)Religious Holid=
+ay, T=3D(DO NOT USE- INACTIVE)Tardy-Excused, ED=3D(DO NOT USE- INACTIVE)Ear=
+ly Dismissal, MEDX=3D(DO NOT USE- INACTIVE)Medical Excused, A=3DAbsent (Ina=
+ctive-DO NOT USE), A1=3DABSENT AM (Inactive-DO NOT USE), A2=3DABSENT PM (In=
+active-DO NOT USE), E1=3DExcused VoTech (Inactive-DO NOT USE), E2=3DExcused=
+ Absence Vo-Tech PM (Inactive-DO NOT USE), F=3DField Trip (Inactive-DO NOT =
+USE), INC=3DIncacerated (Inactive-DO NOT USE), RC=3DReturned to Class (Inac=
+tive-DO NOT USE), S1=3DSuspension AM (Inactive-DO NOT USE), S2=3DSuspension=
+ PM (Inactive-DO NOT USE), SS=3DSupt. Suspension (Inactive-DO NOT USE), X=
+=3DUnlawful Abs (Inactive-DO NOT USE))

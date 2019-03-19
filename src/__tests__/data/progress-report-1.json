@@ -1,0 +1,232 @@
+{
+  "course":"CHEMISTRY H",
+  "grades":[
+    {
+      "date":"01/28/2019",
+      "grade":"B",
+      "name":"TEST: Stoichiometry Unit",
+      "notes":"",
+      "percentage":"84.85%",
+      "score":"56/66"
+    },
+    {
+      "date":"01/29/2019",
+      "grade":"A",
+      "name":"Stoichiometry Review",
+      "notes":"",
+      "percentage":"100%",
+      "score":"35/35"
+    },
+    {
+      "date":"01/29/2019",
+      "grade":"A",
+      "name":"Stoichiometry Test Review #2",
+      "notes":"",
+      "percentage":"100%",
+      "score":"44/44"
+    },
+    {
+      "date":"01/31/2019",
+      "grade":"F",
+      "name":"Mole Ratios Pre-Lab",
+      "notes":"",
+      "percentage":"50%",
+      "score":"4/8"
+    },
+    {
+      "date":"02/01/2019",
+      "grade":"A",
+      "name":"LAB: Mole Ratios",
+      "notes":"",
+      "percentage":"94.74%",
+      "score":"36/38"
+    },
+    {
+      "date":"02/04/2019",
+      "grade":"*",
+      "name":"Textbook: pg. 298 (#1-10)",
+      "notes":"^",
+      "percentage":"",
+      "score":"-/10"
+    },
+    {
+      "date":"02/05/2019",
+      "grade":"A",
+      "name":"Textbook: pgs. 298-299 (#11-20)",
+      "notes":"",
+      "percentage":"100%",
+      "score":"10/10"
+    },
+    {
+      "date":"02/06/2019",
+      "grade":"A",
+      "name":"Textbook: pg. 299 (#31-34)",
+      "notes":"",
+      "percentage":"100%",
+      "score":"12/12"
+    },
+    {
+      "date":"02/07/2019",
+      "grade":"A",
+      "name":"Energy Packet: pg. 13 (#1-4)",
+      "notes":"",
+      "percentage":"100%",
+      "score":"12/12"
+    },
+    {
+      "date":"02/07/2019",
+      "grade":"A",
+      "name":"QUIZ: Calorimetry Problems",
+      "notes":"",
+      "percentage":"100%",
+      "score":"24/24"
+    },
+    {
+      "date":"02/08/2019",
+      "grade":"*",
+      "name":"Textbook: pg. 299 (#39-42)",
+      "notes":"^",
+      "percentage":"",
+      "score":"-/12"
+    },
+    {
+      "date":"02/11/2019",
+      "grade":"*",
+      "name":"Energy Packet: pg. 11",
+      "notes":"^",
+      "percentage":"",
+      "score":"-/16"
+    },
+    {
+      "date":"02/12/2019",
+      "grade":"F",
+      "name":"Energy Packet: pg. 15",
+      "notes":"",
+      "percentage":"0%",
+      "score":"0/10"
+    },
+    {
+      "date":"02/14/2019",
+      "grade":"A",
+      "name":"Energy Packet: pg. 18 (#1-3)",
+      "notes":"",
+      "percentage":"100%",
+      "score":"6/6"
+    },
+    {
+      "date":"02/21/2019",
+      "grade":"F",
+      "name":"Energy Packet: pg. 20",
+      "notes":"",
+      "percentage":"0%",
+      "score":"0/12"
+    },
+    {
+      "date":"02/22/2019",
+      "grade":"A",
+      "name":"Hess' Law WS (#5-7)",
+      "notes":"",
+      "percentage":"100%",
+      "score":"12/12"
+    },
+    {
+      "date":"02/22/2019",
+      "grade":"A",
+      "name":"QUIZ: Hess' Law",
+      "notes":"",
+      "percentage":"100%",
+      "score":"16/16"
+    },
+    {
+      "date":"02/25/2019",
+      "grade":"A",
+      "name":"Energy Unit Review",
+      "notes":"",
+      "percentage":"100%",
+      "score":"40/40"
+    },
+    {
+      "date":"02/25/2019",
+      "grade":"C+",
+      "name":"TEST: Energy Unit",
+      "notes":"",
+      "percentage":"77.5%",
+      "score":"62/80"
+    },
+    {
+      "date":"03/01/2019",
+      "grade":"B+",
+      "name":"Exothermic & Endothermic Reactions Lab",
+      "notes":"",
+      "percentage":"86.67%",
+      "score":"39/45"
+    },
+    {
+      "date":"03/04/2019",
+      "grade":"C",
+      "name":"QUIZ: Coulombic Attraction POGIL",
+      "notes":"",
+      "percentage":"75%",
+      "score":"12/16"
+    },
+    {
+      "date":"03/06/2019",
+      "grade":"C",
+      "name":"QUIZ: Electron Energy & Light POGIL",
+      "notes":"",
+      "percentage":"75%",
+      "score":"6/8"
+    },
+    {
+      "date":"03/07/2019",
+      "grade":"A",
+      "name":"Electron Notes Packet: pg. 7",
+      "notes":"",
+      "percentage":"100%",
+      "score":"16/16"
+    },
+    {
+      "date":"03/08/2019",
+      "grade":"A",
+      "name":"Energy Calculations WS #3",
+      "notes":"",
+      "percentage":"100%",
+      "score":"12/12"
+    },
+    {
+      "date":"03/08/2019",
+      "grade":"C",
+      "name":"QUIZ: Energy, Frequency, & Wavelength",
+      "notes":"",
+      "percentage":"75%",
+      "score":"9/12"
+    },
+    {
+      "date":"03/11/2019",
+      "grade":"A",
+      "name":"LAB: Flame Tests",
+      "notes":"",
+      "percentage":"93.33%",
+      "score":"28/30"
+    },
+    {
+      "date":"03/12/2019",
+      "grade":"D+",
+      "name":"QUIZ: Electron Configurations POGIL",
+      "notes":"",
+      "percentage":"66.67%",
+      "score":"12/18"
+    },
+    {
+      "date":"03/19/2019",
+      "grade":"*",
+      "name":"TEST: Electron Structure",
+      "notes":"",
+      "percentage":"",
+      "score":"-/100"
+    }
+  ],
+  "markingPeriod":"M3",
+  "overallGrade":"B",
+  "teacher":"Johnson, Samuel"
+}
