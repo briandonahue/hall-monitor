@@ -84,7 +84,7 @@ function parseProgressData(msg) {
  
 function updateCourseSheet(data) {
   const fileName = "Caelan School Data"
-  const sheetName = "Assignments"
+  const sheetName = "All Assignments"
   const files = DriveApp.getFilesByName(fileName)
   const file = SpreadsheetApp.open(files.next())
   
