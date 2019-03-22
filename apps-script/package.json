@@ -1,0 +1,10 @@
+{
+  "name": "powerschool-apps-script",
+  "version": "1.0.0",
+  "main": "Code.ts",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/google-apps-script": "0.0.39",
+    "@types/node": "^11.11.4"
+  }
+}

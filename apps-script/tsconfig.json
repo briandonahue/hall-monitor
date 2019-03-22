@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "lib": ["es6"],
+        "removeComments": true,
+        "types": ["google-apps-script"]
+    },
+    "include": [
+        "./*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

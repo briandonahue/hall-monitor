@@ -4,19 +4,20 @@
 ^ - Score is exempt from final grade
 * - Assignment is not included in final grade
 ** - This final grade may include assignments that are not yet published by the teachers. It may also be a result of special weighting used by the teacher.
-
 */
 
-function myFunction() {
-  var labelObject = GmailApp.getUserLabelByName("Powerschool")
-  var unreadCount = labelObject.getUnreadCount()
+import { GradeData } from './GradeData'
+
+function start () {
+  let labelObject = GmailApp.getUserLabelByName("Powerschool")
+  let unreadCount = labelObject.getUnreadCount()
   if(unreadCount > 0) {
-    var unreadThreads = labelObject.getThreads(0, unreadCount)
+    let unreadThreads = labelObject.getThreads(0, unreadCount)
     unreadThreads.forEach(processThread)
   }
 }
 
-function processThread(mailThread) {
+const processThread = (mailThread) => {
   const unreadMsgs = mailThread.getMessages().filter(function (msg) { return msg.isUnread() })
 
   unreadMsgs.forEach(function (msg) {
@@ -30,32 +31,29 @@ function processThread(mailThread) {
   mailThread.markRead()
 }
 
-function updateProgress(msg) {
+const updateProgress = (msg) => {
   const progressData = parseProgressData(msg)
   updateCourseSheet(progressData)
-  
-  updateCourseSheet(progressData)
-  
 }
  
-function updateAttendance(msg) {
+const updateAttendance = (msg) =>  {
  
 }
  
-function parseProgressData(msg) {
-  var body = msg.getPlainBody()
- 
-  var data = {}
+const parseProgressData = (msg) =>  {
+  let body = msg.getPlainBody()
+
+  const data = new GradeData()
   data.markingPeriod = /Grading period\s*:\s*(.*)/.exec(body)[1]
   data.course = /Course\s*:\s*(.*)/.exec(body)[1]
   data.teacher = /Instructor\s*:\s*(.*)/.exec(body)[1]
-  data.grade = /Current overall grade\**\s*:\s*(.*)/.exec(body)[1].trim()
+  data.overallGrade = /Current overall grade\**\s*:\s*(.*)/.exec(body)[1].trim()
   
-  var classInfoRE = /.*\sGrade:\s.*\r/g
-//  var classInfoRE = /.*\r/g
-  var classInfo =  body.match(classInfoRE)
+  let classInfoRE = /.*\sGrade:\s.*\r/g
+//  let classInfoRE = /.*\r/g
+  let classInfo =  body.match(classInfoRE)
   
-  data.grades = classInfo.map(function (g) {
+  data.assignments = classInfo.map(function (g) {
     const sp = g.split("Grade:")
     const dateCourse = /(\d\d\/\d\d\/\d\d\d\d)\s+(.*)/.exec(sp[0].trim())
  
@@ -82,43 +80,57 @@ function parseProgressData(msg) {
   return data;
 }
  
-function updateCourseSheet(data) {
+const updateCourseSheet = (data) =>  {
   const fileName = "Caelan School Data"
-  const sheetName = "All Assignments"
+  const assignmentsSheetName = "All Assignments"
+  const overallGradeSheetName = "Overall Grades"
   const files = DriveApp.getFilesByName(fileName)
-  const file = SpreadsheetApp.open(files.next())
+  const spreadsheetFile = SpreadsheetApp.open(files.next())
   
-  var sheet = file.getSheetByName(sheetName) || file.insertSheet(sheetName)
+  let assignmentSheet = spreadsheetFile.getSheetByName(assignmentsSheetName) 
+                        || spreadsheetFile.insertSheet(assignmentsSheetName)
+  updateAssignmentSheet(data, assignmentSheet)
+  let overallSheet = spreadsheetFile.getSheetByName(overallGradeSheetName) 
+                     || spreadsheetFile.insertSheet(overallGradeSheetName)
+  updateOverallSheet(data, overallSheet)
  
  
-  var header = sheet.getRange(1,1,1,8)
+}
+const updateAssignmentSheet = (data: GradeData, 
+  assignmentSheet: GoogleAppsScript.Spreadsheet.Sheet) => {
+
+  let header = assignmentSheet.getRange(1,1,1,8)
   header.setValues([["MP", "Course", "Date", "Name", "Grade", "Score", "Percent", "Note"]])
   header.setFontWeight("bold")
   header.setHorizontalAlignment("center")
-  sheet.setFrozenRows(1)
+  assignmentSheet.setFrozenRows(1)
  
-  const numRows = sheet.getLastRow() -1
+  const numRows = assignmentSheet.getLastRow() -1
   if(numRows > 0) {
-    deleteExisting(sheet, data)
+    deleteExisting(assignmentSheet, data)
   }
   
-  const newValues = data.grades.forEach(function (grade) {
-    const row = [data.markingPeriod, data.course, grade.date, grade.name, grade.grade, grade.score, grade.percentage, grade.notes]   
-    sheet.appendRow(row)
+  const newValues = data.assignments.forEach(function (assignment) {
+    const row = [data.markingPeriod, data.course, assignment.date, assignment.name, assignment.grade, assignment.score, assignment.percentage, assignment.notes]   
+    assignmentSheet.appendRow(row)
   })  
   
-    sheet.getRange(2,4,sheet.getLastRow(),3).setHorizontalAlignment("right")
-    sheet.autoResizeColumns(1,7)
-    sheet.getRange(2,1, sheet.getLastRow() -1, sheet.getLastColumn()).sort([{column: 3, ascending: false}, {column: 2, ascending: true }])
+    assignmentSheet.getRange(2,4,assignmentSheet.getLastRow(),3).setHorizontalAlignment("right")
+    assignmentSheet.autoResizeColumns(1,7)
+    assignmentSheet.getRange(2,1, assignmentSheet.getLastRow() -1, assignmentSheet.getLastColumn()).sort([{column: 3, ascending: false}, {column: 2, ascending: true }])
+}
+const updateOverallSheet = (data: GradeData, 
+  overallSheet: GoogleAppsScript.Spreadsheet.Sheet) => {
+
 }
   
-function deleteExisting(sheet, data) {
+const deleteExisting = (sheet, data) => {
   const range = sheet.getRange(2, 1, sheet.getLastRow() -1, sheet.getLastColumn()) 
   range.sort([{column: 1, ascending: true}, { column: 2, ascending: true}])
   const values = range.getValues()
-  var startIndex = -1
-  var endIndex = 0
-  for (var i = 0; i < values.length; i++ ) {
+  let startIndex = -1
+  let endIndex = 0
+  for (let i = 0; i < values.length; i++ ) {
     if(values[i][0] === data.markingPeriod && values[i][1] === data.course) {
       if(startIndex < 0) {
         startIndex = i
