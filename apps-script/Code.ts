@@ -121,6 +121,9 @@ const updateAssignmentSheet = (data: GradeData,
 }
 const updateOverallSheet = (data: GradeData, 
   overallSheet: GoogleAppsScript.Spreadsheet.Sheet) => {
+    // TODO:
+    // header
+    // update/insert class/grade
 
 }
   

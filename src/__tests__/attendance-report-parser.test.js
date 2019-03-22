@@ -14,7 +14,7 @@ describe('attendance report parser', () => {
           console.log(match)
 
           match = (/\d\d\/\d\d\/\d\d\d\d\s+\w+/gm).exec(part)
-        } while(match != null)
+        } while (match != null)
       }
     }
 
