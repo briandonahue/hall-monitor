@@ -1,5 +1,6 @@
 class GradeData {
   markingPeriod: string
+  updatedDate: string
   course: string
   teacher: string
   overallGrade: string
