@@ -2,14 +2,21 @@ import { GradeData } from './GradeData'
 
 const parseProgressData = (msg: GoogleAppsScript.Gmail.GmailMessage) =>  {
   let body = msg.getPlainBody()
+  Logger.log(`parsing...`)
 
   const msgDate = msg.getDate()
   const data = new GradeData()
+
+  const gradeMatch = /Current overall grade\**\s*:\s*(.*)/.exec(body)
+  const overallGrade = gradeMatch ? gradeMatch[1].trim() : null
+  Logger.log(`overall grade: ${overallGrade}`)
+
   data.updatedDate = `${msgDate.getMonth() + 1}/${msgDate.getDate()}/${msgDate.getFullYear()}`
   data.markingPeriod = /Grading period\s*:\s*(.*)/.exec(body)[1]
   data.course = /Course\s*:\s*(.*)/.exec(body)[1]
   data.teacher = /Instructor\s*:\s*(.*)/.exec(body)[1]
-  data.overallGrade = /Current overall grade\**\s*:\s*(.*)/.exec(body)[1].trim()
+  data.overallGrade = overallGrade
+  Logger.log(`parsed...`)
   
   let classInfoRE = /.*\sGrade:\s.*\r/g
 //  let classInfoRE = /.*\r/g

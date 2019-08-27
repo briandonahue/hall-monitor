@@ -1,9 +1,12 @@
 module.exports = (body) => {
+  const gradeMatch = /Current overall grade\**\s*:\s*(.*)/.exec(body)
+  const overallGrade = gradeMatch ? gradeMatch[1].trim() : null
+
   const data = {
     markingPeriod: /Grading period\s*:\s*(.*)/.exec(body)[1],
     course: /Course\s*:\s*(.*)/.exec(body)[1],
     teacher: /Instructor\s*:\s*(.*)/.exec(body)[1],
-    overallGrade: /Current overall grade\**\s*:\s*(.*)/.exec(body)[1].trim()
+    overallGrade
   }
 
   const classInfoRE = /.*\sGrade:\s.*[\r\n]/g

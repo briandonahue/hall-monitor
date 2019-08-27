@@ -10,20 +10,30 @@ import { GradeData } from './GradeData'
 import * as parseProgressData from './parse-progress-data'
 
 function start () {
-  let labelObject = GmailApp.getUserLabelByName("Powerschool")
-  let unreadCount = labelObject.getUnreadCount()
+  Logger.log('STARTING...')
+  const labelObject = GmailApp.getUserLabelByName("Powerschool")
+  const unreadThreads = labelObject.getThreads(0,50).filter(function(thread) {
+    return thread.isUnread()
+  }) 
+  let unreadCount = unreadThreads.length
   if(unreadCount > 0) {
-    let unreadThreads = labelObject.getThreads(0, unreadCount)
+    Logger.log(`Unread count: ${unreadCount}`)
     unreadThreads.forEach(processThread)
   }
 }
 
 const processThread = (mailThread: GoogleAppsScript.Gmail.GmailThread) => {
-  const unreadMsgs = mailThread.getMessages().filter(function (msg) { return msg.isUnread() })
+  const unreadMsgs = mailThread.getMessages().filter(function (msg) { 
+    Logger.log(`${msg.getSubject()}: ${msg.isUnread()}`
+    return msg.isUnread() 
+  })
+  Logger.log(`Unread messages found: ${unreadMsgs.length}`)
 
   unreadMsgs.forEach(function (msg) {
    const subj = msg.getSubject()  
+   Logger.log(`Found message: '${subj}'`)
     if(/Progress/.test(subj)){
+      Logger.log('Progress report found')
       updateProgress(msg)
     } else if(/attendance/.test(subj)){
       updateAttendance(msg)
@@ -33,16 +43,35 @@ const processThread = (mailThread: GoogleAppsScript.Gmail.GmailThread) => {
 }
 
 const updateProgress = (msg: GoogleAppsScript.Gmail.GmailMessage) => {
+  Logger.log('CALL parseProgressData...')
   const progressData = parseProgressData(msg)
-  updateGoogleSheets(progressData)
+  updateProgressSheets(progressData)
 }
  
 const updateAttendance = (msg) =>  {
- 
+  const records = parseAttendanceData(msg)
 }
  
+const parseAttendanceData = (msg) => {
+  const body = msg.getPlainBody()
+  const newText = body.replace(/=\n/g, '').replace(/\s+-\s+/g, '\n')
+  const splits = newText.split('Expression ')
+  let records = []
+  for (const part of splits) {
+    if (/^HR/.test(part)) {
+      const lines = part.split('\n')
+      for (const line of lines) {
+        const match = (/(\d\d\/\d\d\/\d\d\d\d)\s+(\w+)/).exec(line)
+        if (match) {
+          records.push({ date: match[1], key: match[2]})
+        }
+      }
+    }
+  }
+  return records
+}
  
-const updateGoogleSheets = (data) =>  {
+const updateProgressSheets = (data) =>  {
   const fileName = "Caelan School Data"
   const assignmentsSheetName = "All Assignments"
   const overallGradeSheetName = "Overall Grades"
@@ -100,24 +129,9 @@ const updateOverallSheet = (data: GradeData,
   if(numRows > 0) {
     deleteExisting(overallSheet, data)
   }
-  /*
-  Logger.log('NUM ROWS BEFORE:' + dataRange.getNumRows())
-  if (dataRange.getLastRow() -1 > 0){
-    dataRange.getValues().forEach((val, i) => {
-      if(val[0] === data.markingPeriod && val[1] === data.course) {
-        Logger.log(`deleting row: ${i+1}: ${JSON.stringify(val)}`)
-        overallSheet.deleteRow(i + 1)
-        Logger.log('NUM ROWS INTERIM:' + overallSheet.getDataRange().getNumRows())
-      }
-    })
 
-  }
-  */
-  
   const row = [data.markingPeriod, data.course, data.overallGrade, data.updatedDate]   
   overallSheet.appendRow(row)
-  
-
 }
   
 const deleteExisting = (sheet: GoogleAppsScript.Spreadsheet.Sheet, data: GradeData) => {
